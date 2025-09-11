@@ -96,7 +96,9 @@ class Sub:
 
     def __repr__(self):
         left = f"( {repr(self.p1)} )" if isinstance(self.p1, Add) else repr(self.p1)
-        right = f"( {repr(self.p2)} )" if isinstance(self.p2, (Add, Sub)) else repr(self.p2)
+        right = (
+            f"( {repr(self.p2)} )" if isinstance(self.p2, (Add, Sub)) else repr(self.p2)
+        )
         return f"{left} - {right}"
 
     def evaluate(self, x_value):
